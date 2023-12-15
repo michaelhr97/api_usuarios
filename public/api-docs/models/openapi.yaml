@@ -28,6 +28,8 @@ tags:
     description: 'User login'
   - name: '👥 Users'
     description: 'User management'
+  - name: '💯 Results'
+    description: 'Result management'
 paths:
   /login_check:
     post:
@@ -220,6 +222,33 @@ paths:
             Allow:
               $ref: '#/components/headers/Allow'
 
+  /results:
+    get: 
+      tags: ['💯 Results']
+      summary: Retrieves the collection of Result resources.
+      description: 'Returns all results from the system that the user has access to.'
+      operationId: api_results_cget
+      security:
+          - MiWApiSecurity: []
+      responses:
+        '200':
+          description: 'Array of results'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results: { description: 'Results array', type: array, items: { $ref: '#/components/schemas/Result' } }
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '401':
+          $ref: '#/components/responses/401_Unauthorized_Response'
+        '403':
+          $ref: '#/components/responses/403_Forbidden_Response'
+        '404':
+          $ref: '#/components/responses/404_Resource_Not_Found_Response'
+
 components:
   headers:
     ETag:
@@ -282,6 +311,59 @@ components:
       example:
         code: 200
         message: Ok
+    Result:
+      type: object
+      properties:
+        id:
+          description: 'Result Id'
+          type: integer
+          format: int64
+        result:
+          description: 'Result value'
+          type: integer
+          format: int64
+        time:
+          description: 'Time when result was created'
+          type: string
+        user:
+          type: object
+          properties:
+            id:
+              description: 'User Id'
+              type: integer
+              format: int64
+            email:
+              description: 'User email'
+              type: string
+              format: email
+            roles:
+              description: 'User roles'
+              type: string
+              format: json
+            _links:
+              description: link relations
+              type: object
+              properties:
+                parent:
+                  type: object
+                  properties: {"href": { "type": "string", "format": "url" }}
+                self:
+                  type: object
+                  properties: {"href": { "type": "string", "format": "url" }}
+          
+      example:
+        id: 1508
+        result: 5
+        time: '2023-12-15 22:45:00'
+        user:
+          id: 10
+          email: 'miw.etsisi@upm.es'
+          roles: [ 'ROLE_USER', 'ROLE_ADMIN' ]
+          _links:
+            parent:
+              href: /api/v1/users
+            self:
+              href: /api/v1/users/1508
 
   responses:
     400_BadRequest_Response:
