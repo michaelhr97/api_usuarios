@@ -20,4 +20,13 @@ interface ApiResultsCommandInterface
      * @param Request $request request
      */
     public function postAction(Request $request): Response;
+
+    /**
+     * **DELETE** Action<br>
+     * Summary: Removes the Result resource.<br>
+     * _Notes_: Deletes the result identified by &#x60;resultId&#x60;.
+     *
+     * @param int $resultId Result id
+     */
+    public function deleteAction(Request $request, int $resultId): Response;
 }

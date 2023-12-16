@@ -13,10 +13,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-use function in_array;
-
 /**
- * Class ApiUsersController
+ * Class ApiResultsController
  *
  * @package App\Controller
  *
@@ -90,5 +88,46 @@ class ApiResultsCommandController extends AbstractController implements ApiResul
             $result,
             $format,
         );
+    }
+
+    /**
+     * @see ApiResultsCommandInterface::deleteAction()
+     *
+     * @Route(
+     *     path="/{resultId}.{_format}",
+     *     defaults={ "_format": null },
+     *     requirements={
+     *          "resultId": "\d+",
+     *         "_format": "json|xml"
+     *     },
+     *     methods={ Request::METHOD_DELETE },
+     *     name="delete"
+     * )
+     */
+    public function deleteAction(Request $request, int $resultId): Response
+    {
+        $format = Utils::getFormat($request);
+        if (!$this->isGranted('IS_AUTHENTICATED_FULLY')) {
+            return Utils::errorMessage( // 401
+                Response::HTTP_UNAUTHORIZED,
+                '`Unauthorized`: Invalid credentials.',
+                $format
+            );
+        }
+
+
+        /** @var Result $result */
+        $result = $this->entityManager
+            ->getRepository(Result::class)
+            ->find($resultId);
+
+        if (!$result instanceof Result) {   // 404 - Not Found
+            return Utils::errorMessage(Response::HTTP_NOT_FOUND, null, $format);
+        }
+
+        $this->entityManager->remove($result);
+        $this->entityManager->flush();
+
+        return Utils::apiResponse(Response::HTTP_NO_CONTENT);
     }
 }
