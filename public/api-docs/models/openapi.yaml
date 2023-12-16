@@ -248,7 +248,34 @@ paths:
           $ref: '#/components/responses/403_Forbidden_Response'
         '404':
           $ref: '#/components/responses/404_Resource_Not_Found_Response'
-
+    post:
+      tags: ['💯 Results']
+      summary: Creates a Result resource.
+      description: 'Creates a new result'
+      operationId: api_results_post
+      security:
+        - MiWApiSecurity: []
+      requestBody:
+        $ref: '#/components/requestBodies/ResultRequestBody'
+      responses:
+        '201':
+          description: '`Created`: result created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+          headers:
+            Location:
+              $ref: '#/components/headers/Location'
+        '400':
+          $ref: '#/components/responses/400_BadRequest_Response'
+        '401':
+          $ref: '#/components/responses/401_Unauthorized_Response'
+        '403':
+          $ref: '#/components/responses/403_Forbidden_Response'
+        '422':
+          $ref: '#/components/responses/422_UnprocessableEntity_Response'
+    
   '/results/{resultId}':
     get:
       tags: ['💯 Results']
@@ -501,6 +528,25 @@ components:
                 description: 'User password'
                 type: string
                 format: password
+    ResultRequestBody:
+      description: '`Result` data'
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              email:
+                description: 'User email'
+                type: string
+                format: email
+              result:
+                description: 'User result'
+                type: integer
+                format: int64
+            required:
+              - email
+              - result
 
   parameters:
     userId:
