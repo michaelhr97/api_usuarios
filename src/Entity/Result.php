@@ -119,6 +119,14 @@ class Result implements JsonSerializable
   }
 
   /**
+   * @param DateTime|null $time
+   */
+  public function setTime(?DateTime $time): void
+  {
+    $this->time = $time;
+  }
+
+  /**
    * @param User|null $user
    */
   public function setUser(?User $user): void

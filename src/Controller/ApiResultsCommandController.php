@@ -91,6 +91,60 @@ class ApiResultsCommandController extends AbstractController implements ApiResul
     }
 
     /**
+     * @see ApiResultsCommandInterface::putAction()
+     *
+     * @Route(
+     *     path="/{resultId}.{_format}",
+     *     defaults={ "_format": null },
+     *     requirements={
+     *          "resultId": "\d+",
+     *         "_format": "json|xml"
+     *     },
+     *     methods={ Request::METHOD_PUT },
+     *     name="put"
+     * )
+     * @throws JsonException
+     */
+    public function putAction(Request $request, int $resultId): Response
+    {
+        $format = Utils::getFormat($request);
+        if (!$this->isGranted('IS_AUTHENTICATED_FULLY')) {
+            return Utils::errorMessage( // 401
+                Response::HTTP_UNAUTHORIZED,
+                '`Unauthorized`: Invalid credentials.',
+                $format
+            );
+        }
+
+        $body = $request->getContent();
+        $postData = json_decode($body, true);
+
+        if (!isset($postData[Result::RESULT_ATTR])) {
+            // 422 - Unprocessable Entity -> Faltan datos
+            return Utils::errorMessage(Response::HTTP_UNPROCESSABLE_ENTITY, null, $format);
+        }
+
+        /** @var Result $result */
+        $result = $this->entityManager
+            ->getRepository(Result::class)
+            ->find($resultId);
+
+        if (!$result instanceof Result) {    // 404 - Not Found
+            return Utils::errorMessage(Response::HTTP_NOT_FOUND, null, $format);
+        }
+
+        $result->setResult($postData[Result::RESULT_ATTR]);
+        $result->setTime(new DateTime('now'));
+        $this->entityManager->flush();
+
+        return Utils::apiResponse(
+            209,                        // 209 - Content Returned
+            $result,
+            $format
+        );
+    }
+
+    /**
      * @see ApiResultsCommandInterface::deleteAction()
      *
      * @Route(
