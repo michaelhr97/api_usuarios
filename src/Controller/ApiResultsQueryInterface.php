@@ -30,4 +30,13 @@ interface ApiResultsQueryInterface
      * @param int $resultId Result id
      */
     public function getAction(Request $request, int $resultId): Response;
+
+    /**
+     * **OPTIONS** Action<br>
+     * Summary: Provides the list of HTTP supported methods<br>
+     * _Notes_: Return a &#x60;Allow&#x60; header with a list of HTTP supported methods.
+     *
+     * @param int|null $resultId Result id
+     */
+    public function optionsAction(?int $resultId): Response;
 }

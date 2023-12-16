@@ -142,4 +142,35 @@ class ApiResultsQueryController extends AbstractController implements ApiResults
             ]
         );
     }
+
+    /**
+     * @see ApiResultsQueryInterface::optionsAction()
+     *
+     * @Route(
+     *     path="/{resultId}.{_format}",
+     *     defaults={ "resultId" = 0, "_format": "json" },
+     *     requirements={
+     *          "resultId": "\d+",
+     *         "_format": "json|xml"
+     *     },
+     *     methods={ Request::METHOD_OPTIONS },
+     *     name="options"
+     * )
+     */
+    public function optionsAction(int|null $resultId): Response
+    {
+        $methods = $resultId !== 0
+            ? [Request::METHOD_GET, Request::METHOD_PUT, Request::METHOD_DELETE]
+            : [Request::METHOD_GET, Request::METHOD_POST];
+        $methods[] = Request::METHOD_OPTIONS;
+
+        return new Response(
+            null,
+            Response::HTTP_NO_CONTENT,
+            [
+                self::HEADER_ALLOW => implode(',', $methods),
+                self::HEADER_CACHE_CONTROL => 'public, inmutable'
+            ]
+        );
+    }
 }
