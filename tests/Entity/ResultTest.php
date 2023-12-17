@@ -51,16 +51,16 @@ class ResultTest extends TestCase
 
   public function testGetSetResult()
   {
-    $result = self::$faker->randomDigitNotNull;
+    $result = self::$faker->randomDigitNotNull();
     self::$result->setResult($result);
     static::assertSame($result, self::$result->getResult());
   }
 
   public function testGetSetUser()
   {
-    $userEmail = self::$faker->email;
-    $password = self::$faker->password;
-    $role = self::$faker->slug;
+    $userEmail = self::$faker->email();
+    $password = self::$faker->password();
+    $role = self::$faker->slug();
 
     self::$user->setEmail($userEmail);
     self::$user->setPassword($password);
@@ -74,7 +74,7 @@ class ResultTest extends TestCase
 
   public function testGetSetTime()
   {
-    $date = self::$faker->dateTime;
+    $date = self::$faker->dateTime();
     self::$result->setTime($date);
     static::assertSame($date, self::$result->getTime());
   }
