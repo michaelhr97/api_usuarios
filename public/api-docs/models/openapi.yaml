@@ -258,8 +258,6 @@ paths:
               $ref: '#/components/headers/ETag'
         '401':
           $ref: '#/components/responses/401_Unauthorized_Response'
-        '403':
-          $ref: '#/components/responses/403_Forbidden_Response'
         '404':
           $ref: '#/components/responses/404_Resource_Not_Found_Response'
     post:
@@ -285,8 +283,6 @@ paths:
           $ref: '#/components/responses/400_BadRequest_Response'
         '401':
           $ref: '#/components/responses/401_Unauthorized_Response'
-        '403':
-          $ref: '#/components/responses/403_Forbidden_Response'
         '422':
           $ref: '#/components/responses/422_UnprocessableEntity_Response'
     options:
@@ -323,8 +319,6 @@ paths:
               $ref: '#/components/headers/ETag'
         '401':
           $ref: '#/components/responses/401_Unauthorized_Response'
-        '403':
-          $ref: '#/components/responses/403_Forbidden_Response'
         '404':
           $ref: '#/components/responses/404_Resource_Not_Found_Response'
     put:
@@ -349,8 +343,6 @@ paths:
           $ref: '#/components/responses/400_BadRequest_Response'
         '401':
           $ref: '#/components/responses/401_Unauthorized_Response'
-        '403':
-          $ref: '#/components/responses/403_Forbidden_Response'
         '404':
           $ref: '#/components/responses/404_Resource_Not_Found_Response'
     delete:
@@ -367,8 +359,6 @@ paths:
           description: 'Result deleted &lt;Response body is empty&gt;'
         '401':
           $ref: '#/components/responses/401_Unauthorized_Response'
-        '403':
-          $ref: '#/components/responses/403_Forbidden_Response'
         '404':
           $ref: '#/components/responses/404_Resource_Not_Found_Response'
     options:
@@ -690,7 +680,7 @@ components:
     response-422:
       value:
         code: 422
-        message: 'UNPROCESSABLE ENTITY: e-mail or password is left out'
+        message: 'UNPROCESSABLE ENTITY'
 
   securitySchemes:
     MiWApiSecurity:

@@ -372,21 +372,4 @@ class ApiResultsControllerTest extends BaseTestCase
         yield 'putAction404' => [Request::METHOD_PUT];
         yield 'deleteAction404' => [Request::METHOD_DELETE];
     }
-
-    /**
-     * Route provider (expected status: 403 FORBIDDEN)
-     *
-     * @return Generator name => [ method, url ]
-     */
-    #[ArrayShape([
-        'postAction403' => "array",
-        'putAction403' => "array",
-        'deleteAction403' => "array"
-    ])]
-    public function providerRoutes403(): Generator
-    {
-        yield 'postAction403' => [Request::METHOD_POST, self::RUTA_API_RESULTS];
-        yield 'putAction403' => [Request::METHOD_PUT, self::RUTA_API_RESULTS . '/1'];
-        yield 'deleteAction403' => [Request::METHOD_DELETE, self::RUTA_API_RESULTS . '/1'];
-    }
 }
