@@ -116,4 +116,24 @@ class ApiResultsControllerTest extends BaseTestCase
     }
 
 
+    /**
+     * Test GET /results 200 Ok
+     *
+     * @depends testPostResultAction201Created
+     *
+     * @return string ETag header
+     */
+    public function testCGetResultAction200Ok(): string
+    {
+        self::$client->request(Request::METHOD_GET, self::RUTA_API_RESULTS, [], [], self::$adminHeaders);
+        $response = self::$client->getResponse();
+        self::assertTrue($response->isSuccessful());
+        self::assertNotNull($response->getEtag());
+        $r_body = strval($response->getContent());
+        self::assertJson($r_body);
+        $results = json_decode($r_body, true);
+        self::assertArrayHasKey('results', $results);
+
+        return (string) $response->getEtag();
+    }
 }
