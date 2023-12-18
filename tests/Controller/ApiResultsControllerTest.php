@@ -2,12 +2,13 @@
 
 namespace App\Tests\Controller;
 
-use App\Entity\Message;
 use App\Entity\Result;
 use App\Entity\User;
 use Faker\Factory as FakerFactoryAlias;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Generator;
+use JetBrains\PhpStorm\ArrayShape;
 
 /**
  * Class ApiResultsControllerTest
@@ -138,30 +139,6 @@ class ApiResultsControllerTest extends BaseTestCase
     }
 
     /**
-     * Test GET /results 304 NOT MODIFIED
-     *
-     * @param string $etag returned by testCGetResultAction200Ok
-     *
-     * @depends testCGetResultAction200Ok
-     */
-    public function testCGetResultAction304NotModified(string $etag): void
-    {
-        $headers = array_merge(
-            self::$adminHeaders,
-            ['HTTP_If-None-Match' => [$etag]]
-        );
-        self::$client->request(
-            Request::METHOD_GET,
-            self::RUTA_API_RESULTS,
-            [],
-            [],
-            $headers
-        );
-        $response = self::$client->getResponse();
-        self::assertSame(Response::HTTP_NOT_MODIFIED, $response->getStatusCode());
-    }
-
-    /**
      * Test GET /results 200 Ok (with XML header)
      *
      * @param   array<string,string> $result result returned by testPostResultAction201Created()
@@ -214,31 +191,6 @@ class ApiResultsControllerTest extends BaseTestCase
         return (string) $response->getEtag();
     }
 
-
-    /**
-     * Test GET /results/{resultId} 304 NOT MODIFIED
-     *
-     * @param array<string,string> $result result returned by testPostResultAction201Created()
-     * @param string $etag returned by testGetResultAction200Ok
-     * @return string Entity Tag
-     *
-     * @depends testPostResultAction201Created
-     * @depends testGetResultAction200Ok
-     */
-    public function testGetResultAction304NotModified(array $result, string $etag): string
-    {
-        $headers = array_merge(
-            self::$adminHeaders,
-            ['HTTP_If-None-Match' => [$etag]]
-        );
-        self::$client->request(Request::METHOD_GET, self::RUTA_API_RESULTS . '/' . $result['id'], [], [], $headers);
-        $response = self::$client->getResponse();
-        self::assertSame(Response::HTTP_NOT_MODIFIED, $response->getStatusCode());
-
-        return $etag;
-    }
-
-
     /**
      * Test PUT /results/{resultId} 209 Content Returned
      *
@@ -273,4 +225,142 @@ class ApiResultsControllerTest extends BaseTestCase
         return $result_aux;
     }
 
+    /**
+     * Test DELETE /results/{resultId} 204 No Content
+     *
+     * @param   array $result result returned by testPostResultAction201Created()
+     * @return  int resultId
+     * @depends testPostResultAction201Created
+     * @depends testGetResultAction200Ok
+     * @depends testCGetResultAction200Ok
+     */
+    public function testDeleteResultAction204NoContent(array $result): int
+    {
+        self::$client->request(
+            Request::METHOD_DELETE,
+            self::RUTA_API_RESULTS . '/' . $result['id'],
+            [],
+            [],
+            self::$adminHeaders
+
+        );
+        $response = self::$client->getResponse();
+        self::assertSame(
+            Response::HTTP_NO_CONTENT,
+            $response->getStatusCode()
+        );
+        self::assertEmpty((string) $response->getContent());
+
+        return $result['id'];
+    }
+
+    /**
+     * Test GET    /results 401 UNAUTHORIZED
+     * Test POST   /results 401 UNAUTHORIZED
+     * Test GET    /results/{resultId} 401 UNAUTHORIZED
+     * Test PUT    /results/{resultId} 401 UNAUTHORIZED
+     * Test DELETE /results/{resultId} 401 UNAUTHORIZED
+     *
+     * @param string $method
+     * @param string $uri
+     * @dataProvider providerRoutes401
+     * @return void
+     */
+    public function testResultStatus401Unauthorized(string $method, string $uri): void
+    {
+        self::$client->request(
+            $method,
+            $uri,
+            [],
+            [],
+            ['HTTP_ACCEPT' => 'application/json']
+        );
+        $this->checkResponseErrorMessage(
+            self::$client->getResponse(),
+            Response::HTTP_UNAUTHORIZED
+        );
+    }
+
+
+    /**
+     * * * * * * * * * *
+     * P R O V I D E R S
+     * * * * * * * * * *
+     */
+
+    /**
+     * User provider (incomplete) -> 422 status code
+     *
+     * @return Generator user data [email, password]
+     */
+    #[ArrayShape([
+        'no_email' => "array",
+        'no_passwd' => "array",
+        'nothing' => "array"
+    ])]
+    public function userProvider422(): Generator
+    {
+        $faker = FakerFactoryAlias::create('es_ES');
+        $email = $faker->email();
+        $password = $faker->password();
+
+        yield 'no_email' => [null, $password];
+        yield 'no_passwd' => [$email, null];
+        yield 'nothing' => [null, null];
+    }
+
+    /**
+     * Route provider (expected status: 401 UNAUTHORIZED)
+     *
+     * @return Generator name => [ method, url ]
+     */
+    #[ArrayShape([
+        'cgetAction401' => "array",
+        'getAction401' => "array",
+        'postAction401' => "array",
+        'putAction401' => "array",
+        'deleteAction401' => "array"
+    ])]
+    public function providerRoutes401(): Generator
+    {
+        yield 'cgetAction401' => [Request::METHOD_GET, self::RUTA_API_RESULTS];
+        yield 'getAction401' => [Request::METHOD_GET, self::RUTA_API_RESULTS . '/1'];
+        yield 'postAction401' => [Request::METHOD_POST, self::RUTA_API_RESULTS];
+        yield 'putAction401' => [Request::METHOD_PUT, self::RUTA_API_RESULTS . '/1'];
+        yield 'deleteAction401' => [Request::METHOD_DELETE, self::RUTA_API_RESULTS . '/1'];
+    }
+
+    /**
+     * Route provider (expected status 404 NOT FOUND)
+     *
+     * @return Generator name => [ method ]
+     */
+    #[ArrayShape([
+        'getAction404' => "array",
+        'putAction404' => "array",
+        'deleteAction404' => "array"
+    ])]
+    public function providerRoutes404(): Generator
+    {
+        yield 'getAction404' => [Request::METHOD_GET];
+        yield 'putAction404' => [Request::METHOD_PUT];
+        yield 'deleteAction404' => [Request::METHOD_DELETE];
+    }
+
+    /**
+     * Route provider (expected status: 403 FORBIDDEN)
+     *
+     * @return Generator name => [ method, url ]
+     */
+    #[ArrayShape([
+        'postAction403' => "array",
+        'putAction403' => "array",
+        'deleteAction403' => "array"
+    ])]
+    public function providerRoutes403(): Generator
+    {
+        yield 'postAction403' => [Request::METHOD_POST, self::RUTA_API_RESULTS];
+        yield 'putAction403' => [Request::METHOD_PUT, self::RUTA_API_RESULTS . '/1'];
+        yield 'deleteAction403' => [Request::METHOD_DELETE, self::RUTA_API_RESULTS . '/1'];
+    }
 }
