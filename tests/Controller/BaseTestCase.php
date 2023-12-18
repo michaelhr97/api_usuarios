@@ -86,7 +86,7 @@ class BaseTestCase extends WebTestCase
         $role_admin = new User(
             self::$role_admin[User::EMAIL_ATTR],
             self::$role_admin[User::PASSWD_ATTR],
-            [ 'ROLE_ADMIN' ]
+            ['ROLE_ADMIN']
         );
         // hash the password (based on the security.yaml config for the $user class)
         $hashedPassword = $passwordHasher->hashPassword(
@@ -130,16 +130,16 @@ class BaseTestCase extends WebTestCase
         self::$client->request(
             Request::METHOD_POST,
             '/api/v1/login_check',
-            [ ],
-            [ ],
-            [ 'CONTENT_TYPE' => 'application/json' ],
+            [],
+            [],
+            ['CONTENT_TYPE' => 'application/json'],
             (string) json_encode($data)
         );
         $response = self::$client->getResponse();
         // $json_resp = json_decode($response->getContent(), true);
         // (HTTP headers are referenced with HTTP_ prefix as PHP does)
         self::$headers = [
-            'HTTP_ACCEPT'        => 'application/json',
+            'HTTP_ACCEPT' => 'application/json',
             'HTTP_Authorization' => $response->headers->get('Authorization'),
         ];
 
