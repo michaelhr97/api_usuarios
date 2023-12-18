@@ -160,4 +160,29 @@ class ApiResultsControllerTest extends BaseTestCase
         $response = self::$client->getResponse();
         self::assertSame(Response::HTTP_NOT_MODIFIED, $response->getStatusCode());
     }
+
+    /**
+     * Test GET /results 200 Ok (with XML header)
+     *
+     * @param   array<string,string> $result result returned by testPostResultAction201Created()
+     * @return  void
+     * @depends testPostResultAction201Created
+     */
+    public function testCGetResultAction200XmlOk(array $result): void
+    {
+        self::$client->request(
+            Request::METHOD_GET,
+            self::RUTA_API_RESULTS . '/' . $result['id'],
+            [],
+            [],
+            array_merge(
+                self::$adminHeaders,
+                ['HTTP_ACCEPT' => 'application/xml']
+            )
+        );
+        $response = self::$client->getResponse();
+        self::assertTrue($response->isSuccessful(), strval($response->getContent()));
+        self::assertNotNull($response->getEtag());
+        self::assertTrue($response->headers->contains('content-type', 'application/xml'));
+    }
 }
