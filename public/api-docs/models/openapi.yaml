@@ -283,6 +283,8 @@ paths:
           $ref: '#/components/responses/400_BadRequest_Response'
         '401':
           $ref: '#/components/responses/401_Unauthorized_Response'
+        '403':
+          $ref: '#/components/responses/403_Forbidden_Response'
         '422':
           $ref: '#/components/responses/422_UnprocessableEntity_Response'
     options:
@@ -343,6 +345,8 @@ paths:
           $ref: '#/components/responses/400_BadRequest_Response'
         '401':
           $ref: '#/components/responses/401_Unauthorized_Response'
+        '403':
+          $ref: '#/components/responses/403_Forbidden_Response'
         '404':
           $ref: '#/components/responses/404_Resource_Not_Found_Response'
     delete:
@@ -359,6 +363,8 @@ paths:
           description: 'Result deleted &lt;Response body is empty&gt;'
         '401':
           $ref: '#/components/responses/401_Unauthorized_Response'
+        '403':
+          $ref: '#/components/responses/403_Forbidden_Response'
         '404':
           $ref: '#/components/responses/404_Resource_Not_Found_Response'
     options:

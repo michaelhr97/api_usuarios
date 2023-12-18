@@ -12,6 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
 /**
  * Class ApiResultsController
@@ -26,9 +27,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class ApiResultsCommandController extends AbstractController implements ApiResultsCommandInterface
 {
 
+    private AuthorizationCheckerInterface $authorizationChecker;
+
+
     public function __construct(
         private readonly EntityManagerInterface $entityManager,
+        AuthorizationCheckerInterface $authorizationChecker
     ) {
+        $this->authorizationChecker = $authorizationChecker;
     }
     /**
      * @see ApiResultsCommandInterface::postAction()
@@ -55,6 +61,8 @@ class ApiResultsCommandController extends AbstractController implements ApiResul
             );
         }
 
+
+
         $body = $request->getContent();
         $postData = json_decode((string) $body, true, 512, JSON_THROW_ON_ERROR);
 
@@ -70,6 +78,17 @@ class ApiResultsCommandController extends AbstractController implements ApiResul
 
         if (!$user instanceof User) {    // 400 - Bad Request
             return Utils::errorMessage(Response::HTTP_NOT_FOUND, null, $format);
+        }
+
+        if (!$this->authorizationChecker->isGranted('ROLE_ADMIN')) {
+            // Restricciones adicionales para usuarios normales (ROLE_USER)
+            $currentUser = $this->getUser();
+            $postData = json_decode((string) $request->getContent(), true, 512, JSON_THROW_ON_ERROR);
+
+            // Verificar que el usuario actual solo está operando con sus propios resultados
+            if ($currentUser instanceof User && $currentUser->getEmail() !== $postData[User::EMAIL_ATTR]) {
+                return Utils::errorMessage(Response::HTTP_FORBIDDEN, 'Access Denied: You can only operate on your own results.', $format);
+            }
         }
 
         // 201 - Created
@@ -116,6 +135,9 @@ class ApiResultsCommandController extends AbstractController implements ApiResul
             );
         }
 
+        // Obtener el usuario actual
+        $currentUser = $this->getUser();
+
         $body = $request->getContent();
         $postData = json_decode($body, true);
 
@@ -124,8 +146,15 @@ class ApiResultsCommandController extends AbstractController implements ApiResul
             ->getRepository(Result::class)
             ->find($resultId);
 
-        if (!$result instanceof Result) {    // 404 - Not Found
+
+        // Verificar que el resultado existe
+        if (!$result instanceof Result) {
             return Utils::errorMessage(Response::HTTP_NOT_FOUND, null, $format);
+        }
+
+        // Verificar que el usuario actual es el propietario del resultado o es un administrador
+        if (!$this->isGranted('ROLE_ADMIN') && $result->getUser()->getEmail() !== $currentUser->getUserIdentifier()) {
+            return Utils::errorMessage(Response::HTTP_FORBIDDEN, 'Access Denied: You can only operate on your own results.', $format);
         }
 
         $result->setResult($postData[Result::RESULT_ATTR]);
@@ -164,14 +193,23 @@ class ApiResultsCommandController extends AbstractController implements ApiResul
             );
         }
 
+        // Obtener el usuario actual
+        $currentUser = $this->getUser();
 
         /** @var Result $result */
         $result = $this->entityManager
             ->getRepository(Result::class)
             ->find($resultId);
 
-        if (!$result instanceof Result) {   // 404 - Not Found
+
+        // Verificar que el resultado existe
+        if (!$result instanceof Result) {
             return Utils::errorMessage(Response::HTTP_NOT_FOUND, null, $format);
+        }
+
+        // Verificar que el usuario actual es el propietario del resultado o es un administrador
+        if (!$this->isGranted('ROLE_ADMIN') && $result->getUser()->getEmail() !== $currentUser->getUserIdentifier()) {
+            return Utils::errorMessage(Response::HTTP_FORBIDDEN, 'Access Denied: You can only operate on your own results.', $format);
         }
 
         $this->entityManager->remove($result);
