@@ -213,4 +213,28 @@ class ApiResultsControllerTest extends BaseTestCase
 
         return (string) $response->getEtag();
     }
+
+
+    /**
+     * Test GET /results/{resultId} 304 NOT MODIFIED
+     *
+     * @param array<string,string> $result result returned by testPostResultAction201Created()
+     * @param string $etag returned by testGetResultAction200Ok
+     * @return string Entity Tag
+     *
+     * @depends testPostResultAction201Created
+     * @depends testGetResultAction200Ok
+     */
+    public function testGetResultAction304NotModified(array $result, string $etag): string
+    {
+        $headers = array_merge(
+            self::$adminHeaders,
+            ['HTTP_If-None-Match' => [$etag]]
+        );
+        self::$client->request(Request::METHOD_GET, self::RUTA_API_RESULTS . '/' . $result['id'], [], [], $headers);
+        $response = self::$client->getResponse();
+        self::assertSame(Response::HTTP_NOT_MODIFIED, $response->getStatusCode());
+
+        return $etag;
+    }
 }
