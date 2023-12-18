@@ -281,6 +281,32 @@ class ApiResultsControllerTest extends BaseTestCase
         );
     }
 
+    /**
+     * Test GET    /results/{resultId} 404 NOT FOUND
+     * Test PUT    /results/{resultId} 404 NOT FOUND
+     * Test DELETE /results/{resultId} 404 NOT FOUND
+     *
+     * @param string $method
+     * @param int $resultId user id. returned by testDeleteResultAction204NoContent()
+     * @return void
+     * @dataProvider providerRoutes404
+     * @depends      testDeleteResultAction204NoContent
+     */
+    public function testResultStatus404NotFound(string $method, int $resultId): void
+    {
+        self::$client->request(
+            $method,
+            self::RUTA_API_RESULTS . '/' . $resultId,
+            [],
+            [],
+            self::$adminHeaders
+        );
+        $this->checkResponseErrorMessage(
+            self::$client->getResponse(),
+            Response::HTTP_NOT_FOUND
+        );
+    }
+
 
     /**
      * * * * * * * * * *
