@@ -119,11 +119,6 @@ class ApiResultsCommandController extends AbstractController implements ApiResul
         $body = $request->getContent();
         $postData = json_decode($body, true);
 
-        if (!isset($postData[Result::RESULT_ATTR])) {
-            // 422 - Unprocessable Entity -> Faltan datos
-            return Utils::errorMessage(Response::HTTP_UNPROCESSABLE_ENTITY, null, $format);
-        }
-
         /** @var Result $result */
         $result = $this->entityManager
             ->getRepository(Result::class)
