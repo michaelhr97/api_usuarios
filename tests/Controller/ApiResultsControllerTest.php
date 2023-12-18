@@ -60,4 +60,60 @@ class ApiResultsControllerTest extends BaseTestCase
         self::assertNotEmpty($response->headers->get('Allow'));
     }
 
+
+    /**
+     * Test POST /users 201 Created
+     *
+     * @return array<string,string> user data
+     */
+    public function testPostResultAction201Created(): array
+    {
+        $user = [
+            User::EMAIL_ATTR => self::$faker->email(),
+            User::PASSWD_ATTR => self::$faker->password(),
+            User::ROLES_ATTR => [self::$faker->word()],
+        ];
+        self::$adminHeaders = $this->getTokenHeaders(
+            self::$role_admin[User::EMAIL_ATTR],
+            self::$role_admin[User::PASSWD_ATTR]
+        );
+
+        // 201
+        self::$client->request(
+            Request::METHOD_POST,
+            self::RUTA_API_USERS,
+            [],
+            [],
+            self::$adminHeaders,
+            strval(json_encode($user))
+        );
+        $response = self::$client->getResponse();
+
+        $p_data = [
+            Result::RESULT_ATTR => self::$faker->randomDigitNotNull,
+            User::EMAIL_ATTR => $user['email'],
+            Result::TIME_ATTR => null
+        ];
+
+        self::$client->request(
+            Request::METHOD_POST,
+            self::RUTA_API_RESULTS,
+            [],
+            [],
+            self::$adminHeaders,
+            json_encode($p_data)
+        );
+
+        $response = self::$client->getResponse();
+        self::assertSame(Response::HTTP_CREATED, $response->getStatusCode());
+        self::assertTrue($response->isSuccessful());
+        self::assertJson(strval($response->getContent()));
+        $result = json_decode(strval($response->getContent()), true);
+        self::assertNotEmpty($result['id']);
+        self::assertSame($p_data[User::EMAIL_ATTR], $user[User::EMAIL_ATTR]);
+        self::assertSame($p_data[Result::RESULT_ATTR], $result[Result::RESULT_ATTR]);
+        return $result;
+    }
+
+
 }
