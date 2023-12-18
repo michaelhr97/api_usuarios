@@ -136,4 +136,28 @@ class ApiResultsControllerTest extends BaseTestCase
 
         return (string) $response->getEtag();
     }
+
+    /**
+     * Test GET /results 304 NOT MODIFIED
+     *
+     * @param string $etag returned by testCGetResultAction200Ok
+     *
+     * @depends testCGetResultAction200Ok
+     */
+    public function testCGetResultAction304NotModified(string $etag): void
+    {
+        $headers = array_merge(
+            self::$adminHeaders,
+            ['HTTP_If-None-Match' => [$etag]]
+        );
+        self::$client->request(
+            Request::METHOD_GET,
+            self::RUTA_API_RESULTS,
+            [],
+            [],
+            $headers
+        );
+        $response = self::$client->getResponse();
+        self::assertSame(Response::HTTP_NOT_MODIFIED, $response->getStatusCode());
+    }
 }
