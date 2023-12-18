@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Result;
+use App\Entity\User;
 use App\Utility\Utils;
 use Doctrine\ORM\EntityManagerInterface;
 use JsonException;
@@ -61,10 +62,18 @@ class ApiResultsQueryController extends AbstractController implements ApiResults
             );
         }
 
-        $order = strval($request->get('sort'));
-        $results = $this->entityManager
-            ->getRepository(Result::class)
-            ->findBy([], [$order => 'ASC']);
+        // Obtener el usuario actual
+        $currentUser = $this->getUser();
+
+        if ($this->isGranted('ROLE_ADMIN')) {
+            // Si es administrador, obtener todos los resultados
+            $results = $this->entityManager
+                ->getRepository(Result::class)
+                ->findAll();
+        } else {
+            $user = $this->entityManager->getRepository(User::class)->findBy([User::EMAIL_ATTR => $currentUser->getUserIdentifier()]);
+            $results = $this->entityManager->getRepository(Result::class)->findBy([Result::USER_ATTR => $user]);
+        }
 
         // No hay resultados?
         // @codeCoverageIgnoreStart
@@ -117,13 +126,23 @@ class ApiResultsQueryController extends AbstractController implements ApiResults
             );
         }
 
+        // Obtener el usuario actual
+        $currentUser = $this->getUser();
+
         /** @var Result $result */
         $result = $this->entityManager
             ->getRepository(Result::class)
             ->find($resultId);
 
+
+        // Verificar que el resultado existe
         if (!$result instanceof Result) {
-            return Utils::errorMessage(Response::HTTP_NOT_FOUND, null, $format);    // 404
+            return Utils::errorMessage(Response::HTTP_NOT_FOUND, null, $format);
+        }
+
+        // Verificar que el usuario actual es el propietario del resultado o es un administrador
+        if (!$this->isGranted('ROLE_ADMIN') && $result->getUser()->getEmail() !== $currentUser->getUserIdentifier()) {
+            return Utils::errorMessage(Response::HTTP_FORBIDDEN, 'Access Denied: You can only operate on your own results.', $format);
         }
 
         // Caching with ETag (password included)

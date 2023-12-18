@@ -258,6 +258,8 @@ paths:
               $ref: '#/components/headers/ETag'
         '401':
           $ref: '#/components/responses/401_Unauthorized_Response'
+        '403':
+          $ref: '#/components/responses/403_Forbidden_Response'
         '404':
           $ref: '#/components/responses/404_Resource_Not_Found_Response'
     post:
@@ -321,6 +323,8 @@ paths:
               $ref: '#/components/headers/ETag'
         '401':
           $ref: '#/components/responses/401_Unauthorized_Response'
+        '403':
+          $ref: '#/components/responses/403_Forbidden_Response'
         '404':
           $ref: '#/components/responses/404_Resource_Not_Found_Response'
     put:
