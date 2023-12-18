@@ -63,9 +63,9 @@ class ApiResultsControllerTest extends BaseTestCase
 
 
     /**
-     * Test POST /users 201 Created
+     * Test POST /results 201 Created
      *
-     * @return array<string,string> user data
+     * @return array reslt data
      */
     public function testPostResultAction201Created(): array
     {
@@ -166,7 +166,7 @@ class ApiResultsControllerTest extends BaseTestCase
     /**
      * Test GET /results/{resultId} 200 Ok
      *
-     * @param   array<string,string> $result result returned by testPostResultAction201Created()
+     * @param   array $result result returned by testPostResultAction201Created()
      * @return  string ETag header
      * @depends testPostResultAction201Created
      */
@@ -194,8 +194,8 @@ class ApiResultsControllerTest extends BaseTestCase
     /**
      * Test PUT /results/{resultId} 209 Content Returned
      *
-     * @param   array<string,string> $result result returned by testPostResultAction201Created()
-     * @return  array<string,string> modified result data
+     * @param   array $result result returned by testPostResultAction201Created()
+     * @return  array modified result data
      * @depends testPostResultAction201Created
      */
     public function testPutResultAction209ContentReturned(array $result): array
