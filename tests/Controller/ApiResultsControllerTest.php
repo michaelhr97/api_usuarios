@@ -237,4 +237,40 @@ class ApiResultsControllerTest extends BaseTestCase
 
         return $etag;
     }
+
+
+    /**
+     * Test PUT /results/{resultId} 209 Content Returned
+     *
+     * @param   array<string,string> $result result returned by testPostResultAction201Created()
+     * @return  array<string,string> modified result data
+     * @depends testPostResultAction201Created
+     */
+    public function testPutResultAction209ContentReturned(array $result): array
+    {
+        $updatedResult = self::$faker->randomDigitNotNull;
+        $p_data = [
+            Result::RESULT_ATTR => $updatedResult
+        ];
+
+        self::$client->request(
+            Request::METHOD_PUT,
+            self::RUTA_API_RESULTS . '/' . $result['id'],
+            [],
+            [],
+            self::$adminHeaders,
+            strval(json_encode($p_data))
+        );
+        $response = self::$client->getResponse();
+
+        self::assertSame(209, $response->getStatusCode());
+        $r_body = (string) $response->getContent();
+        self::assertJson($r_body);
+        $result_aux = json_decode($r_body, true);
+        self::assertSame($result['id'], $result_aux['id']);
+        self::assertSame($p_data[Result::RESULT_ATTR], $result_aux[Result::RESULT_ATTR]);
+
+        return $result_aux;
+    }
+
 }
