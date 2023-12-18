@@ -25,6 +25,7 @@
         "ext-iconv": "*",
         "ext-json": "*",
         "ext-sodium": "*",
+        "doctrine/dbal": "^3.7",
         "doctrine/doctrine-bundle": "^2.11",
         "doctrine/orm": "^2.17",
         "jms/serializer-bundle": "^5.3",
