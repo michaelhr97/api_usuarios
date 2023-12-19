@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <build time="Mon Dec 18 16:56:04 UTC 2023" phpunit="9.5.28" coverage="9.2.29">
+    <runtime name="PHP" version="8.2.13" url="https://secure.php.net/"/>
+    <driver name="xdebug" version="3.3.0"/>
+  </build>
+  <project source="/home/michael/Develop/api_usuarios/src">
+    <tests>
+      <test name="App\Tests\Entity\ResultTest::testGetSetTime" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Entity\ResultTest::testGetSetResult" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Entity\ResultTest::testGetSetUser" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Entity\ResultTest::testGetId" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Entity\ResultTest::test__construct" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\DefaultControllerTest::testHomeRedirect" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiResultsControllerTest::testPostResultAction201Created" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiResultsControllerTest::testOptionsUserAction204NoContent" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiResultsControllerTest::testPutResultAction209ContentReturned" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiResultsControllerTest::testCGetResultAction200Ok" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiResultsControllerTest::testCGetResultAction200XmlOk" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiResultsControllerTest::testGetResultAction200Ok" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiResultsControllerTest::testResultStatus401Unauthorized with data set &quot;putAction401&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiResultsControllerTest::testResultStatus401Unauthorized with data set &quot;deleteAction401&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiResultsControllerTest::testResultStatus401Unauthorized with data set &quot;getAction401&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiResultsControllerTest::testResultStatus401Unauthorized with data set &quot;postAction401&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiResultsControllerTest::testResultStatus401Unauthorized with data set &quot;cgetAction401&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiResultsControllerTest::testDeleteResultAction204NoContent" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiResultsControllerTest::testResultStatus404NotFound with data set &quot;getAction404&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiResultsControllerTest::testResultStatus404NotFound with data set &quot;deleteAction404&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiResultsControllerTest::testResultStatus404NotFound with data set &quot;putAction404&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\SecurityControllerTest::testLogincheckAction401Unauthorized with data set &quot;fakeUser2&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\SecurityControllerTest::testLogincheckAction401Unauthorized with data set &quot;fakeUser3&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\SecurityControllerTest::testLogincheckAction401Unauthorized with data set &quot;fakeUser4&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\SecurityControllerTest::testLogincheckAction401Unauthorized with data set &quot;fakeUser5&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\SecurityControllerTest::testLogincheckAction401Unauthorized with data set &quot;fakeUser1&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\SecurityControllerTest::testLogincheckAction200Ok with data set &quot;role_user&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\SecurityControllerTest::testLogincheckAction200Ok with data set &quot;role_admin&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Entity\UserTest::testGetSetPassword" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Entity\UserTest::testConstructor" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Entity\UserTest::testGetId" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Entity\UserTest::testGetSetRoles" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Entity\UserTest::testGetSetEmail" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Entity\MessageTest::testConstructor" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Entity\MessageTest::testGetSetMessage" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Entity\MessageTest::testGetSetCode" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;putAction401&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;postAction401&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;getAction401&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;cgetAction401&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;deleteAction401&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testOptionsUserAction204NoContent" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testUserStatus403Forbidden with data set &quot;deleteAction403&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testUserStatus403Forbidden with data set &quot;putAction403&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testUserStatus403Forbidden with data set &quot;postAction403&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testPostUserAction201Created" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200XmlOk" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testPostUserAction400BadRequest" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200Ok" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction304NotModified" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction200Ok" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction304NotModified" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction209ContentReturned" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction403Forbidden" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testPostUserAction422UnprocessableEntity with data set &quot;no_email&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testPostUserAction422UnprocessableEntity with data set &quot;nothing&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testPostUserAction422UnprocessableEntity with data set &quot;no_passwd&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction400BadRequest" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction412PreconditionFailed" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testDeleteUserAction204NoContent" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testUserStatus404NotFound with data set &quot;deleteAction404&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testUserStatus404NotFound with data set &quot;getAction404&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="App\Tests\Controller\ApiUsersControllerTest::testUserStatus404NotFound with data set &quot;putAction404&quot;" size="unknown" result="0" status="PASSED"/>
+    </tests>
+    <directory name="/">
+      <totals>
+        <lines total="1725" comments="606" code="1119" executable="462" executed="438" percent="94.81"/>
+        <methods count="54" tested="46" percent="85.19"/>
+        <functions count="0" tested="0" percent="0"/>
+        <classes count="12" tested="8" percent="66.67"/>
+        <traits count="0" tested="0" percent="0"/>
+      </totals>
+      <directory name="Controller">
+        <totals>
+          <lines total="1083" comments="408" code="675" executable="349" executed="345" percent="98.85"/>
+          <methods count="19" tested="16" percent="84.21"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="6" tested="4" percent="66.67"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <file name="ApiResultsCommandController.php" href="Controller/ApiResultsCommandController.php.xml">
+          <totals>
+            <lines total="183" comments="65" code="118" executable="66" executed="64" percent="96.97"/>
+            <methods count="4" tested="3" percent="75.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="ApiResultsQueryController.php" href="Controller/ApiResultsQueryController.php.xml">
+          <totals>
+            <lines total="177" comments="68" code="109" executable="60" executed="58" percent="96.67"/>
+            <methods count="4" tested="2" percent="50.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="ApiResultsQueryInterface.php" href="Controller/ApiResultsQueryInterface.php.xml">
+          <totals>
+            <lines total="43" comments="25" code="18" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="ApiUsersCommandController.php" href="Controller/ApiUsersCommandController.php.xml">
+          <totals>
+            <lines total="267" comments="81" code="186" executable="122" executed="122" percent="100.00"/>
+            <methods count="4" tested="4" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="ApiUsersCommandInterface.php" href="Controller/ApiUsersCommandInterface.php.xml">
+          <totals>
+            <lines total="43" comments="27" code="16" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="ApiUsersQueryController.php" href="Controller/ApiUsersQueryController.php.xml">
+          <totals>
+            <lines total="177" comments="68" code="109" executable="60" executed="60" percent="100.00"/>
+            <methods count="4" tested="4" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="ApiUsersQueryInterface.php" href="Controller/ApiUsersQueryInterface.php.xml">
+          <totals>
+            <lines total="43" comments="25" code="18" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="DefaultController.php" href="Controller/DefaultController.php.xml">
+          <totals>
+            <lines total="39" comments="18" code="21" executable="4" executed="4" percent="100.00"/>
+            <methods count="1" tested="1" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="SecurityController.php" href="Controller/SecurityController.php.xml">
+          <totals>
+            <lines total="111" comments="31" code="80" executable="37" executed="37" percent="100.00"/>
+            <methods count="2" tested="2" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+      <directory name="Entity">
+        <totals>
+          <lines total="418" comments="114" code="304" executable="57" executed="50" percent="87.72"/>
+          <methods count="27" tested="26" percent="96.30"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="3" tested="2" percent="66.67"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <file name="Message.php" href="Entity/Message.php.xml">
+          <totals>
+            <lines total="71" comments="25" code="46" executable="6" executed="6" percent="100.00"/>
+            <methods count="5" tested="5" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="Result.php" href="Entity/Result.php.xml">
+          <totals>
+            <lines total="155" comments="39" code="116" executable="24" executed="17" percent="70.83"/>
+            <methods count="10" tested="9" percent="90.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="User.php" href="Entity/User.php.xml">
+          <totals>
+            <lines total="192" comments="50" code="142" executable="27" executed="27" percent="100.00"/>
+            <methods count="12" tested="12" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+      <directory name="EventListener">
+        <totals>
+          <lines total="42" comments="12" code="30" executable="11" executed="11" percent="100.00"/>
+          <methods count="1" tested="1" percent="100.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="1" tested="1" percent="100.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <file name="JWTCreatedListener.php" href="EventListener/JWTCreatedListener.php.xml">
+          <totals>
+            <lines total="42" comments="12" code="30" executable="11" executed="11" percent="100.00"/>
+            <methods count="1" tested="1" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+      <directory name="Security">
+        <totals>
+          <lines total="93" comments="47" code="46" executable="13" executed="0" percent="0.00"/>
+          <methods count="4" tested="0" percent="0.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="1" tested="0" percent="0.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <file name="JWTTokenAuthenticator.php" href="Security/JWTTokenAuthenticator.php.xml">
+          <totals>
+            <lines total="93" comments="47" code="46" executable="13" executed="0" percent="0.00"/>
+            <methods count="4" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+      <directory name="Utility">
+        <totals>
+          <lines total="89" comments="25" code="64" executable="32" executed="32" percent="100.00"/>
+          <methods count="3" tested="3" percent="100.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="1" tested="1" percent="100.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <file name="Utils.php" href="Utility/Utils.php.xml">
+          <totals>
+            <lines total="89" comments="25" code="64" executable="32" executed="32" percent="100.00"/>
+            <methods count="3" tested="3" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+    </directory>
+  </project>
+</phpunit>

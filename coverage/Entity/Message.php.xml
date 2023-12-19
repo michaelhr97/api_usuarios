@@ -1,0 +1,535 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <file name="Message.php" path="/Entity">
+    <totals>
+      <lines total="71" comments="25" code="46" executable="6" executed="6" percent="100.00"/>
+      <methods count="5" tested="5" percent="100.00"/>
+      <functions count="0" tested="0" percent="0"/>
+      <classes count="1" tested="1" percent="100.00"/>
+      <traits count="0" tested="0" percent="0"/>
+    </totals>
+    <class name="App\Entity\Message" start="10" executable="6" executed="6" crap="5">
+      <namespace name="App\Entity"/>
+      <method name="__construct" signature="__construct(int $code, ?string $message)" start="29" end="33" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="getCode" signature="getCode(): int" start="38" end="41" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="setCode" signature="setCode(int $code): void" start="48" end="51" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="getMessage" signature="getMessage(): ?string" start="56" end="59" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="setMessage" signature="setMessage(?string $message): void" start="66" end="69" crap="1" executable="1" executed="1" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="31">
+        <covered by="App\Tests\Controller\ApiResultsControllerTest::testResultStatus401Unauthorized with data set &quot;putAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiResultsControllerTest::testResultStatus401Unauthorized with data set &quot;deleteAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiResultsControllerTest::testResultStatus401Unauthorized with data set &quot;getAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiResultsControllerTest::testResultStatus401Unauthorized with data set &quot;postAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiResultsControllerTest::testResultStatus401Unauthorized with data set &quot;cgetAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiResultsControllerTest::testResultStatus404NotFound with data set &quot;getAction404&quot;"/>
+        <covered by="App\Tests\Controller\ApiResultsControllerTest::testResultStatus404NotFound with data set &quot;deleteAction404&quot;"/>
+        <covered by="App\Tests\Controller\ApiResultsControllerTest::testResultStatus404NotFound with data set &quot;putAction404&quot;"/>
+        <covered by="App\Tests\Entity\MessageTest::testConstructor"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;putAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;postAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;getAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;cgetAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;deleteAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus403Forbidden with data set &quot;deleteAction403&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus403Forbidden with data set &quot;putAction403&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus403Forbidden with data set &quot;postAction403&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPostUserAction400BadRequest"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction403Forbidden"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPostUserAction422UnprocessableEntity with data set &quot;no_email&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPostUserAction422UnprocessableEntity with data set &quot;nothing&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPostUserAction422UnprocessableEntity with data set &quot;no_passwd&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction400BadRequest"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction412PreconditionFailed"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus404NotFound with data set &quot;deleteAction404&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus404NotFound with data set &quot;getAction404&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus404NotFound with data set &quot;putAction404&quot;"/>
+      </line>
+      <line nr="32">
+        <covered by="App\Tests\Controller\ApiResultsControllerTest::testResultStatus401Unauthorized with data set &quot;putAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiResultsControllerTest::testResultStatus401Unauthorized with data set &quot;deleteAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiResultsControllerTest::testResultStatus401Unauthorized with data set &quot;getAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiResultsControllerTest::testResultStatus401Unauthorized with data set &quot;postAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiResultsControllerTest::testResultStatus401Unauthorized with data set &quot;cgetAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiResultsControllerTest::testResultStatus404NotFound with data set &quot;getAction404&quot;"/>
+        <covered by="App\Tests\Controller\ApiResultsControllerTest::testResultStatus404NotFound with data set &quot;deleteAction404&quot;"/>
+        <covered by="App\Tests\Controller\ApiResultsControllerTest::testResultStatus404NotFound with data set &quot;putAction404&quot;"/>
+        <covered by="App\Tests\Entity\MessageTest::testConstructor"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;putAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;postAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;getAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;cgetAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;deleteAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus403Forbidden with data set &quot;deleteAction403&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus403Forbidden with data set &quot;putAction403&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus403Forbidden with data set &quot;postAction403&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPostUserAction400BadRequest"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction403Forbidden"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPostUserAction422UnprocessableEntity with data set &quot;no_email&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPostUserAction422UnprocessableEntity with data set &quot;nothing&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPostUserAction422UnprocessableEntity with data set &quot;no_passwd&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction400BadRequest"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction412PreconditionFailed"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus404NotFound with data set &quot;deleteAction404&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus404NotFound with data set &quot;getAction404&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus404NotFound with data set &quot;putAction404&quot;"/>
+      </line>
+      <line nr="40">
+        <covered by="App\Tests\Controller\ApiResultsControllerTest::testResultStatus401Unauthorized with data set &quot;putAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiResultsControllerTest::testResultStatus401Unauthorized with data set &quot;deleteAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiResultsControllerTest::testResultStatus401Unauthorized with data set &quot;getAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiResultsControllerTest::testResultStatus401Unauthorized with data set &quot;postAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiResultsControllerTest::testResultStatus401Unauthorized with data set &quot;cgetAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiResultsControllerTest::testResultStatus404NotFound with data set &quot;getAction404&quot;"/>
+        <covered by="App\Tests\Controller\ApiResultsControllerTest::testResultStatus404NotFound with data set &quot;deleteAction404&quot;"/>
+        <covered by="App\Tests\Controller\ApiResultsControllerTest::testResultStatus404NotFound with data set &quot;putAction404&quot;"/>
+        <covered by="App\Tests\Entity\MessageTest::testConstructor"/>
+        <covered by="App\Tests\Entity\MessageTest::testGetSetCode"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;putAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;postAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;getAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;cgetAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;deleteAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus403Forbidden with data set &quot;deleteAction403&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus403Forbidden with data set &quot;putAction403&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus403Forbidden with data set &quot;postAction403&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPostUserAction400BadRequest"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction403Forbidden"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPostUserAction422UnprocessableEntity with data set &quot;no_email&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPostUserAction422UnprocessableEntity with data set &quot;nothing&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPostUserAction422UnprocessableEntity with data set &quot;no_passwd&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction400BadRequest"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction412PreconditionFailed"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus404NotFound with data set &quot;deleteAction404&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus404NotFound with data set &quot;getAction404&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus404NotFound with data set &quot;putAction404&quot;"/>
+      </line>
+      <line nr="50">
+        <covered by="App\Tests\Entity\MessageTest::testGetSetCode"/>
+      </line>
+      <line nr="58">
+        <covered by="App\Tests\Entity\MessageTest::testConstructor"/>
+        <covered by="App\Tests\Entity\MessageTest::testGetSetMessage"/>
+      </line>
+      <line nr="68">
+        <covered by="App\Tests\Entity\MessageTest::testGetSetMessage"/>
+      </line>
+    </coverage>
+    <source>
+      <line no="1">
+        <token name="T_OPEN_TAG">&lt;?php</token>
+      </line>
+      <line no="2"/>
+      <line no="3">
+        <token name="T_NAMESPACE">namespace</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">App\Entity</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="4"/>
+      <line no="5">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">JMS\Serializer\Annotation</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_AS">as</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Serializer</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="6"/>
+      <line no="7">
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="8">
+        <token name="T_DOC_COMMENT"> * Class Message</token>
+      </line>
+      <line no="9">
+        <token name="T_DOC_COMMENT"> */</token>
+      </line>
+      <line no="10">
+        <token name="T_ATTRIBUTE">#[</token>
+        <token name="T_NAME_QUALIFIED">Serializer\XmlNamespace</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">uri</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"http://www.w3.org/2005/Atom"</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">prefix</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"atom"</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+      </line>
+      <line no="11">
+        <token name="T_ATTRIBUTE">#[</token>
+        <token name="T_NAME_QUALIFIED">Serializer\XmlRoot</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">name</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Message</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">MESSAGE_ATTR</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CLOSE_SQUARE">]</token>
+      </line>
+      <line no="12">
+        <token name="T_CLASS">class</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Message</token>
+      </line>
+      <line no="13">
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="14">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FINAL">final</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONST">const</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">MESSAGE_ATTR</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'message'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="15">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FINAL">final</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONST">const</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">CODE_ATTR</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'code'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="16"/>
+      <line no="17">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_ATTRIBUTE">#[</token>
+        <token name="T_NAME_QUALIFIED">Serializer\SerializedName</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">Message</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">CODE_ATTR</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+      </line>
+      <line no="18">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">int</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$code</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="19"/>
+      <line no="20">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_ATTRIBUTE">#[</token>
+        <token name="T_NAME_QUALIFIED">Serializer\SerializedName</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">Message</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">MESSAGE_ATTR</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+      </line>
+      <line no="21">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_PIPE">|</token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$message</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="22"/>
+      <line no="23">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="24">
+        <token name="T_DOC_COMMENT">     * Message constructor.</token>
+      </line>
+      <line no="25">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="26">
+        <token name="T_DOC_COMMENT">     * @param int         $code    code</token>
+      </line>
+      <line no="27">
+        <token name="T_DOC_COMMENT">     * @param null|string $message message</token>
+      </line>
+      <line no="28">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="29">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">__construct</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">int</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$code</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LNUMBER">200</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_QUESTION_MARK">?</token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$message</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="30">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="31">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">code</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$code</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="32">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">message</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$message</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="33">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="34"/>
+      <line no="35">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="36">
+        <token name="T_DOC_COMMENT">     * Get code</token>
+      </line>
+      <line no="37">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="38">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getCode</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">int</token>
+      </line>
+      <line no="39">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="40">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">code</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="41">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="42"/>
+      <line no="43">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="44">
+        <token name="T_DOC_COMMENT">     * Set code</token>
+      </line>
+      <line no="45">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="46">
+        <token name="T_DOC_COMMENT">     * @param int $code code</token>
+      </line>
+      <line no="47">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="48">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">setCode</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">int</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$code</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">void</token>
+      </line>
+      <line no="49">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="50">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">code</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$code</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="51">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="52"/>
+      <line no="53">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="54">
+        <token name="T_DOC_COMMENT">     * Get message</token>
+      </line>
+      <line no="55">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="56">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getMessage</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_QUESTION_MARK">?</token>
+        <token name="T_STRING">string</token>
+      </line>
+      <line no="57">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="58">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">message</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="59">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="60"/>
+      <line no="61">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="62">
+        <token name="T_DOC_COMMENT">     * Set message</token>
+      </line>
+      <line no="63">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="64">
+        <token name="T_DOC_COMMENT">     * @param null|string $message message</token>
+      </line>
+      <line no="65">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="66">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">setMessage</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_QUESTION_MARK">?</token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$message</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">void</token>
+      </line>
+      <line no="67">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="68">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">message</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$message</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="69">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="70">
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="71"/>
+    </source>
+  </file>
+</phpunit>

@@ -1,0 +1,1495 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <file name="ApiUsersQueryController.php" path="/Controller">
+    <totals>
+      <lines total="177" comments="68" code="109" executable="60" executed="60" percent="100.00"/>
+      <methods count="4" tested="4" percent="100.00"/>
+      <functions count="0" tested="0" percent="0"/>
+      <classes count="1" tested="1" percent="100.00"/>
+      <traits count="0" tested="0" percent="0"/>
+    </totals>
+    <class name="App\Controller\ApiUsersQueryController" start="26" executable="60" executed="60" crap="15">
+      <namespace name="App\Controller"/>
+      <method name="__construct" signature="__construct(Doctrine\ORM\EntityManagerInterface $entityManager)" start="32" end="35" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="cgetAction" signature="cgetAction(Symfony\Component\HttpFoundation\Request $request): Symfony\Component\HttpFoundation\Response" start="53" end="91" crap="6" executable="23" executed="23" coverage="100"/>
+      <method name="getAction" signature="getAction(Symfony\Component\HttpFoundation\Request $request, int $userId): Symfony\Component\HttpFoundation\Response" start="109" end="144" crap="6" executable="24" executed="24" coverage="100"/>
+      <method name="optionsAction" signature="optionsAction(int|null $userId): Symfony\Component\HttpFoundation\Response" start="160" end="175" crap="2" executable="12" executed="12" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="35">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;getAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;cgetAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testOptionsUserAction204NoContent"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200XmlOk"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction304NotModified"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction304NotModified"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction403Forbidden"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction400BadRequest"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus404NotFound with data set &quot;getAction404&quot;"/>
+      </line>
+      <line nr="55">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;cgetAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction304NotModified"/>
+      </line>
+      <line nr="56">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;cgetAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction304NotModified"/>
+      </line>
+      <line nr="57">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;cgetAction401&quot;"/>
+      </line>
+      <line nr="58">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;cgetAction401&quot;"/>
+      </line>
+      <line nr="59">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;cgetAction401&quot;"/>
+      </line>
+      <line nr="60">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;cgetAction401&quot;"/>
+      </line>
+      <line nr="64">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction304NotModified"/>
+      </line>
+      <line nr="65">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction304NotModified"/>
+      </line>
+      <line nr="66">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction304NotModified"/>
+      </line>
+      <line nr="67">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction304NotModified"/>
+      </line>
+      <line nr="77">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction304NotModified"/>
+      </line>
+      <line nr="78">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction304NotModified"/>
+      </line>
+      <line nr="79">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction304NotModified"/>
+      </line>
+      <line nr="82">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200Ok"/>
+      </line>
+      <line nr="83">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200Ok"/>
+      </line>
+      <line nr="84">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200Ok"/>
+      </line>
+      <line nr="85">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200Ok"/>
+      </line>
+      <line nr="87">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200Ok"/>
+      </line>
+      <line nr="88">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200Ok"/>
+      </line>
+      <line nr="111">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;getAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200XmlOk"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction304NotModified"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction403Forbidden"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction400BadRequest"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus404NotFound with data set &quot;getAction404&quot;"/>
+      </line>
+      <line nr="112">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;getAction401&quot;"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200XmlOk"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction304NotModified"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction403Forbidden"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction400BadRequest"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus404NotFound with data set &quot;getAction404&quot;"/>
+      </line>
+      <line nr="113">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;getAction401&quot;"/>
+      </line>
+      <line nr="114">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;getAction401&quot;"/>
+      </line>
+      <line nr="115">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;getAction401&quot;"/>
+      </line>
+      <line nr="116">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;getAction401&quot;"/>
+      </line>
+      <line nr="121">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200XmlOk"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction304NotModified"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction403Forbidden"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction400BadRequest"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus404NotFound with data set &quot;getAction404&quot;"/>
+      </line>
+      <line nr="122">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200XmlOk"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction304NotModified"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction403Forbidden"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction400BadRequest"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus404NotFound with data set &quot;getAction404&quot;"/>
+      </line>
+      <line nr="123">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200XmlOk"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction304NotModified"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction403Forbidden"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction400BadRequest"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus404NotFound with data set &quot;getAction404&quot;"/>
+      </line>
+      <line nr="125">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200XmlOk"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction304NotModified"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction403Forbidden"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction400BadRequest"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus404NotFound with data set &quot;getAction404&quot;"/>
+      </line>
+      <line nr="126">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus404NotFound with data set &quot;getAction404&quot;"/>
+      </line>
+      <line nr="130">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200XmlOk"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction304NotModified"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction403Forbidden"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction400BadRequest"/>
+      </line>
+      <line nr="131">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200XmlOk"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction304NotModified"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction403Forbidden"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction400BadRequest"/>
+      </line>
+      <line nr="132">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction304NotModified"/>
+      </line>
+      <line nr="135">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200XmlOk"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction403Forbidden"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction400BadRequest"/>
+      </line>
+      <line nr="136">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200XmlOk"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction403Forbidden"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction400BadRequest"/>
+      </line>
+      <line nr="137">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200XmlOk"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction403Forbidden"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction400BadRequest"/>
+      </line>
+      <line nr="138">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200XmlOk"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction403Forbidden"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction400BadRequest"/>
+      </line>
+      <line nr="140">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200XmlOk"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction403Forbidden"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction400BadRequest"/>
+      </line>
+      <line nr="141">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200XmlOk"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction403Forbidden"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction400BadRequest"/>
+      </line>
+      <line nr="162">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testOptionsUserAction204NoContent"/>
+      </line>
+      <line nr="163">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testOptionsUserAction204NoContent"/>
+      </line>
+      <line nr="164">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testOptionsUserAction204NoContent"/>
+      </line>
+      <line nr="165">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testOptionsUserAction204NoContent"/>
+      </line>
+      <line nr="167">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testOptionsUserAction204NoContent"/>
+      </line>
+      <line nr="168">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testOptionsUserAction204NoContent"/>
+      </line>
+      <line nr="169">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testOptionsUserAction204NoContent"/>
+      </line>
+      <line nr="171">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testOptionsUserAction204NoContent"/>
+      </line>
+      <line nr="172">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testOptionsUserAction204NoContent"/>
+      </line>
+      <line nr="61">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;cgetAction401&quot;"/>
+      </line>
+      <line nr="86">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200Ok"/>
+      </line>
+      <line nr="89">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200Ok"/>
+      </line>
+      <line nr="90">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200Ok"/>
+      </line>
+      <line nr="117">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testUserStatus401Unauthorized with data set &quot;getAction401&quot;"/>
+      </line>
+      <line nr="139">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200XmlOk"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction403Forbidden"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction400BadRequest"/>
+      </line>
+      <line nr="142">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200XmlOk"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction403Forbidden"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction400BadRequest"/>
+      </line>
+      <line nr="143">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testCGetUserAction200XmlOk"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testGetUserAction200Ok"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction403Forbidden"/>
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testPutUserAction400BadRequest"/>
+      </line>
+      <line nr="170">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testOptionsUserAction204NoContent"/>
+      </line>
+      <line nr="173">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testOptionsUserAction204NoContent"/>
+      </line>
+      <line nr="174">
+        <covered by="App\Tests\Controller\ApiUsersControllerTest::testOptionsUserAction204NoContent"/>
+      </line>
+    </coverage>
+    <source>
+      <line no="1">
+        <token name="T_OPEN_TAG">&lt;?php</token>
+      </line>
+      <line no="2"/>
+      <line no="3">
+        <token name="T_NAMESPACE">namespace</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">App\Controller</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="4"/>
+      <line no="5">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">App\Entity\User</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="6">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">App\Utility\Utils</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="7">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Doctrine\ORM\EntityManagerInterface</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="8">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">JsonException</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="9">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Symfony\Bundle\FrameworkBundle\Controller\AbstractController</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="10">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Symfony\Component\HttpFoundation\Request</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="11">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Symfony\Component\HttpFoundation\Response</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="12">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Symfony\Component\Routing\Annotation\Route</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="13"/>
+      <line no="14">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">in_array</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="15"/>
+      <line no="16">
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="17">
+        <token name="T_DOC_COMMENT"> * Class ApiUsersController</token>
+      </line>
+      <line no="18">
+        <token name="T_DOC_COMMENT"> *</token>
+      </line>
+      <line no="19">
+        <token name="T_DOC_COMMENT"> * @package App\Controller</token>
+      </line>
+      <line no="20">
+        <token name="T_DOC_COMMENT"> *</token>
+      </line>
+      <line no="21">
+        <token name="T_DOC_COMMENT"> * @Route(</token>
+      </line>
+      <line no="22">
+        <token name="T_DOC_COMMENT"> *     path=ApiUsersQueryInterface::RUTA_API,</token>
+      </line>
+      <line no="23">
+        <token name="T_DOC_COMMENT"> *     name="api_users_"</token>
+      </line>
+      <line no="24">
+        <token name="T_DOC_COMMENT"> * )</token>
+      </line>
+      <line no="25">
+        <token name="T_DOC_COMMENT"> */</token>
+      </line>
+      <line no="26">
+        <token name="T_CLASS">class</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">ApiUsersQueryController</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EXTENDS">extends</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">AbstractController</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IMPLEMENTS">implements</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">ApiUsersQueryInterface</token>
+      </line>
+      <line no="27">
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="28">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONST">const</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">HEADER_CACHE_CONTROL</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'Cache-Control'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="29">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONST">const</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">HEADER_ETAG</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'ETag'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="30">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONST">const</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">HEADER_ALLOW</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'Allow'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="31"/>
+      <line no="32">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">__construct</token>
+        <token name="T_OPEN_BRACKET">(</token>
+      </line>
+      <line no="33">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_READONLY">readonly</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">EntityManagerInterface</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$entityManager</token>
+      </line>
+      <line no="34">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="35">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="36"/>
+      <line no="37">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="38">
+        <token name="T_DOC_COMMENT">     * @see ApiUsersQueryInterface::cgetAction()</token>
+      </line>
+      <line no="39">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="40">
+        <token name="T_DOC_COMMENT">     * @Route(</token>
+      </line>
+      <line no="41">
+        <token name="T_DOC_COMMENT">     *     path=".{_format}/{sort?id}",</token>
+      </line>
+      <line no="42">
+        <token name="T_DOC_COMMENT">     *     defaults={ "_format": "json", "sort": "id" },</token>
+      </line>
+      <line no="43">
+        <token name="T_DOC_COMMENT">     *     requirements={</token>
+      </line>
+      <line no="44">
+        <token name="T_DOC_COMMENT">     *         "sort": "id|email|roles",</token>
+      </line>
+      <line no="45">
+        <token name="T_DOC_COMMENT">     *         "_format": "json|xml"</token>
+      </line>
+      <line no="46">
+        <token name="T_DOC_COMMENT">     *     },</token>
+      </line>
+      <line no="47">
+        <token name="T_DOC_COMMENT">     *     methods={ Request::METHOD_GET },</token>
+      </line>
+      <line no="48">
+        <token name="T_DOC_COMMENT">     *     name="cget"</token>
+      </line>
+      <line no="49">
+        <token name="T_DOC_COMMENT">     * )</token>
+      </line>
+      <line no="50">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="51">
+        <token name="T_DOC_COMMENT">     * @throws JsonException</token>
+      </line>
+      <line no="52">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="53">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">cgetAction</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">Request</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$request</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Response</token>
+      </line>
+      <line no="54">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="55">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$format</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Utils</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">getFormat</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$request</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="56">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_EXCLAMATION_MARK">!</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">isGranted</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'IS_AUTHENTICATED_FULLY'</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="57">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Utils</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">errorMessage</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_COMMENT">// 401</token>
+      </line>
+      <line no="58">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_STRING">Response</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">HTTP_UNAUTHORIZED</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="59">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'`Unauthorized`: Invalid credentials.'</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="60">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_VARIABLE">$format</token>
+      </line>
+      <line no="61">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="62">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="63"/>
+      <line no="64">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$order</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">strval</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$request</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">get</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'sort'</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="65">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$users</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">entityManager</token>
+      </line>
+      <line no="66">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">getRepository</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">User</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_CLASS">class</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="67">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">findBy</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$order</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'ASC'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="68"/>
+      <line no="69">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_COMMENT">// No hay usuarios?</token>
+      </line>
+      <line no="70">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_COMMENT">// @codeCoverageIgnoreStart</token>
+      </line>
+      <line no="71">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_EMPTY">empty</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$users</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="72">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Utils</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">errorMessage</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">Response</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">HTTP_NOT_FOUND</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$format</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_COMMENT">// 404</token>
+      </line>
+      <line no="73">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="74">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_COMMENT">// @codeCoverageIgnoreEnd</token>
+      </line>
+      <line no="75"/>
+      <line no="76">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_COMMENT">// Caching with ETag</token>
+      </line>
+      <line no="77">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$etag</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">md5</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING_CAST">(string)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">json_encode</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$users</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">JSON_THROW_ON_ERROR</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="78">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$etags</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$request</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">getETags</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_BOOLEAN_AND">&amp;&amp;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">in_array</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$etag</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$etags</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_BOOLEAN_OR">||</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">in_array</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'*'</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$etags</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="79">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NEW">new</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Response</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">null</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Response</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">HTTP_NOT_MODIFIED</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_COMMENT">// 304</token>
+      </line>
+      <line no="80">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="81"/>
+      <line no="82">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Utils</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">apiResponse</token>
+        <token name="T_OPEN_BRACKET">(</token>
+      </line>
+      <line no="83">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_STRING">Response</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">HTTP_OK</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="84">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'users'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">array_map</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_FN">fn</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$u</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE">  </token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'user'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$u</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$users</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="85">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_VARIABLE">$format</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="86">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_OPEN_SQUARE">[</token>
+      </line>
+      <line no="87">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_STRING">self</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">HEADER_CACHE_CONTROL</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'private'</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="88">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_STRING">self</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">HEADER_ETAG</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$etag</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="89">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CLOSE_SQUARE">]</token>
+      </line>
+      <line no="90">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="91">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="92"/>
+      <line no="93">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="94">
+        <token name="T_DOC_COMMENT">     * @see ApiUsersQueryInterface::getAction()</token>
+      </line>
+      <line no="95">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="96">
+        <token name="T_DOC_COMMENT">     * @Route(</token>
+      </line>
+      <line no="97">
+        <token name="T_DOC_COMMENT">     *     path="/{userId}.{_format}",</token>
+      </line>
+      <line no="98">
+        <token name="T_DOC_COMMENT">     *     defaults={ "_format": null },</token>
+      </line>
+      <line no="99">
+        <token name="T_DOC_COMMENT">     *     requirements={</token>
+      </line>
+      <line no="100">
+        <token name="T_DOC_COMMENT">     *          "userId": "\d+",</token>
+      </line>
+      <line no="101">
+        <token name="T_DOC_COMMENT">     *          "_format": "json|xml"</token>
+      </line>
+      <line no="102">
+        <token name="T_DOC_COMMENT">     *     },</token>
+      </line>
+      <line no="103">
+        <token name="T_DOC_COMMENT">     *     methods={ Request::METHOD_GET },</token>
+      </line>
+      <line no="104">
+        <token name="T_DOC_COMMENT">     *     name="get"</token>
+      </line>
+      <line no="105">
+        <token name="T_DOC_COMMENT">     * )</token>
+      </line>
+      <line no="106">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="107">
+        <token name="T_DOC_COMMENT">     * @throws JsonException</token>
+      </line>
+      <line no="108">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="109">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getAction</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">Request</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$request</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">int</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$userId</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Response</token>
+      </line>
+      <line no="110">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="111">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$format</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Utils</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">getFormat</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$request</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="112">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_EXCLAMATION_MARK">!</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">isGranted</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'IS_AUTHENTICATED_FULLY'</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="113">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Utils</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">errorMessage</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_COMMENT">// 401</token>
+      </line>
+      <line no="114">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_STRING">Response</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">HTTP_UNAUTHORIZED</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="115">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'`Unauthorized`: Invalid credentials.'</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="116">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_VARIABLE">$format</token>
+      </line>
+      <line no="117">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="118">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="119"/>
+      <line no="120">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_DOC_COMMENT">/** @var User $user */</token>
+      </line>
+      <line no="121">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$user</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">entityManager</token>
+      </line>
+      <line no="122">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">getRepository</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">User</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_CLASS">class</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="123">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">find</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$userId</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="124"/>
+      <line no="125">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_EXCLAMATION_MARK">!</token>
+        <token name="T_VARIABLE">$user</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_INSTANCEOF">instanceof</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">User</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="126">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Utils</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">errorMessage</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">Response</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">HTTP_NOT_FOUND</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$format</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_COMMENT">// 404</token>
+      </line>
+      <line no="127">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="128"/>
+      <line no="129">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_COMMENT">// Caching with ETag (password included)</token>
+      </line>
+      <line no="130">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$etag</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">md5</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">json_encode</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$user</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">JSON_THROW_ON_ERROR</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOT">.</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$user</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">getPassword</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="131">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$etags</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$request</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">getETags</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_BOOLEAN_AND">&amp;&amp;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">in_array</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$etag</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$etags</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_BOOLEAN_OR">||</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">in_array</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'*'</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$etags</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="132">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NEW">new</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Response</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">null</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Response</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">HTTP_NOT_MODIFIED</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_COMMENT">// 304</token>
+      </line>
+      <line no="133">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="134"/>
+      <line no="135">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Utils</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">apiResponse</token>
+        <token name="T_OPEN_BRACKET">(</token>
+      </line>
+      <line no="136">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_STRING">Response</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">HTTP_OK</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="137">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">User</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">USER_ATTR</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$user</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="138">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_VARIABLE">$format</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="139">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_OPEN_SQUARE">[</token>
+      </line>
+      <line no="140">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_STRING">self</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">HEADER_CACHE_CONTROL</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'private'</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="141">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_STRING">self</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">HEADER_ETAG</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$etag</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="142">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CLOSE_SQUARE">]</token>
+      </line>
+      <line no="143">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="144">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="145"/>
+      <line no="146">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="147">
+        <token name="T_DOC_COMMENT">     * @see ApiUsersQueryInterface::optionsAction()</token>
+      </line>
+      <line no="148">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="149">
+        <token name="T_DOC_COMMENT">     * @Route(</token>
+      </line>
+      <line no="150">
+        <token name="T_DOC_COMMENT">     *     path="/{userId}.{_format}",</token>
+      </line>
+      <line no="151">
+        <token name="T_DOC_COMMENT">     *     defaults={ "userId" = 0, "_format": "json" },</token>
+      </line>
+      <line no="152">
+        <token name="T_DOC_COMMENT">     *     requirements={</token>
+      </line>
+      <line no="153">
+        <token name="T_DOC_COMMENT">     *          "userId": "\d+",</token>
+      </line>
+      <line no="154">
+        <token name="T_DOC_COMMENT">     *         "_format": "json|xml"</token>
+      </line>
+      <line no="155">
+        <token name="T_DOC_COMMENT">     *     },</token>
+      </line>
+      <line no="156">
+        <token name="T_DOC_COMMENT">     *     methods={ Request::METHOD_OPTIONS },</token>
+      </line>
+      <line no="157">
+        <token name="T_DOC_COMMENT">     *     name="options"</token>
+      </line>
+      <line no="158">
+        <token name="T_DOC_COMMENT">     * )</token>
+      </line>
+      <line no="159">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="160">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">optionsAction</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">int</token>
+        <token name="T_PIPE">|</token>
+        <token name="T_STRING">null</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$userId</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Response</token>
+      </line>
+      <line no="161">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="162">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$methods</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$userId</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IS_NOT_IDENTICAL">!==</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LNUMBER">0</token>
+      </line>
+      <line no="163">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_QUESTION_MARK">?</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Request</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">METHOD_GET</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Request</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">METHOD_PUT</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Request</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">METHOD_DELETE</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CLOSE_SQUARE">]</token>
+      </line>
+      <line no="164">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Request</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">METHOD_GET</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Request</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">METHOD_POST</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="165">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$methods</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Request</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">METHOD_OPTIONS</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="166"/>
+      <line no="167">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NEW">new</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Response</token>
+        <token name="T_OPEN_BRACKET">(</token>
+      </line>
+      <line no="168">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_STRING">null</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="169">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_STRING">Response</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">HTTP_NO_CONTENT</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="170">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_OPEN_SQUARE">[</token>
+      </line>
+      <line no="171">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_STRING">self</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">HEADER_ALLOW</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">implode</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">','</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$methods</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="172">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_STRING">self</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">HEADER_CACHE_CONTROL</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'public, inmutable'</token>
+      </line>
+      <line no="173">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CLOSE_SQUARE">]</token>
+      </line>
+      <line no="174">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="175">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="176">
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="177"/>
+    </source>
+  </file>
+</phpunit>
